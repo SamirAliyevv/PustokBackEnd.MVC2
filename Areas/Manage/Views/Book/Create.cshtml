@@ -1,0 +1,113 @@
+﻿@model Books
+<div class="container">
+
+
+    <div class="row justify-content-center">
+
+
+        <div class="col-md-8">
+            <h1> Book Create</h1>
+
+        </div>
+        <div class="col-md-8">
+            <form method="post" asp-action="create" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label  asp-for="AuthorsId   ">Author</label>
+                    <select class="form-control" asp-for="AuthorsId" asp-items="new SelectList(ViewBag.Authors,nameof(Authors.Id),nameof(Authors.FullName))">
+                    
+                            
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="GenresId   ">Genres</label>
+                    <select class="form-control" asp-for="GenresId" asp-items="new SelectList(ViewBag.Genres,nameof(Genres.Id),nameof(Genres.Name))">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TagIds   ">Tagler</label>
+                    <select class="form-control" asp-for="TagIds" asp-items="new SelectList(ViewBag.Tags,nameof(Tags.Id),nameof(Tags.Name))">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price">Price</label>
+                    <input asp-for="Price" class="form-control" >
+                    <span class="text-danger" asp-validation-for="Price"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CostPrice">CostPrice</label>
+                    <input asp-for="CostPrice" class="form-control">
+                    <span class="text-danger" asp-validation-for="CostPrice"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Percent">Percent</label>
+                    <input asp-for="Percent" class="form-control">
+                    <span class="text-danger" asp-validation-for="Percent"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IsFeatured">IsFeatured</label>
+                    <input asp-for="IsFeatured" class="form-control">
+                    <span class="text-danger" asp-validation-for="IsFeatured"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="IsNew">IsNew</label>
+                    <input asp-for="IsNew" class="form-control">
+                    <span class="text-danger" asp-validation-for="IsNew"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StockStatus">StockStatus</label>
+                    <input asp-for="StockStatus" class="form-control">
+                    <span class="text-danger" asp-validation-for="StockStatus"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageFIles">ImageFIles</label>
+                    <input asp-for="ImageFIles" class="form-control">
+                    <span class="text-danger" asp-validation-for="ImageFIles"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PosterFile">PosterFile</label>
+                    <input asp-for="PosterFile" class="form-control">
+                    <span class="text-danger" asp-validation-for="PosterFile"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="HoverPosterFile">HoverPosterFile</label>
+                    <input asp-for="HoverPosterFile" class="form-control">
+                    <span class="text-danger" asp-validation-for="HoverPosterFile"></span>
+                </div>
+
+
+
+
+
+
+               
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
